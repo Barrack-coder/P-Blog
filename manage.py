@@ -1,3 +1,4 @@
+from app import create_app
 from collections import UserDict
 # from app import create_app,db
 from app.models import *
@@ -5,7 +6,7 @@ from flask_script import Manager,Server
 
 
 
-app = ('development')
+app =create_app('development')
 manager = Manager(app)
 
 
@@ -19,7 +20,7 @@ def test():
 
 @manager.shell
 def add_shell_context():
-    return dict(app=app,User=UserDict)
+    return dict(app=app,db=db,User=User)
 
 if __name__=='__main__':
     manager.run()
