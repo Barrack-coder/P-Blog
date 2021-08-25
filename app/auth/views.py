@@ -1,9 +1,10 @@
 from flask import render_template,request,redirect, url_for, flash
 from . import auth
+from .. import db
 from ..models import User
 from .forms import RegistrationForm,LoginForm
-from .. import db
-from flask_login import login_user,logout_user,login_required
+from flask_login import login_user,logout_user,login_required,current_user
+
 # from ..email import mail_message
 
 

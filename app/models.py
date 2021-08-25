@@ -1,4 +1,5 @@
-from . import db,login_manager
+from . import db
+from . import login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from datetime import datetime
@@ -103,3 +104,10 @@ class Subscription(db.Model):
     email = db.Column(db.String(255),unique=True,index=True)
     def __repr__(self):
         return f'User{self.email}'
+
+
+class Quotes:
+  def __init__ (self,author,quote):
+    self.author = author
+    self.quote = quote
+

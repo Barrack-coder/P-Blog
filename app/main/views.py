@@ -1,14 +1,15 @@
-from flask import render_template,request,redirect,url_for,abort
+from flask import render_template,redirect,url_for,abort
+from .. import db
 from . import main
 from ..request import get_quotes
 from flask_login import login_required,current_user
 from ..models import User,Blog,Comment,Subscription
 from .forms import UpdateProfile,NewBlog,MyComment,SubscribeForm,UpdateBlog
-from .. import db
+
 
 @main.route('/',methods=['GET','POST'])
 def index():
-    blog = Blog()
+    blog = Blog.query.all()
     title = "Welcome to blogsite"
     # Getting the quotes
     quotes = get_quotes()
@@ -19,7 +20,7 @@ def index():
         subscription = Subscription(email=email)
         db.session.add(subscription)
         db.session.commit()
-        return render_template('index.html',title=title,blog=blog,quotes=quotes)
+        return render_template('index.html',title=title,blog=blog)
     return render_template('index.html',title=title,blog=blog,quotes=quotes)
 
 @main.route('/new/blog/',methods=['GET','POST'])

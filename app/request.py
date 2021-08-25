@@ -1,6 +1,6 @@
-import app.request as rq
+# import app.request as rq
 import urllib.request,json
-
+from .models import Quotes
 
 # Getting api key
 secret_key = None
@@ -17,12 +17,17 @@ def configure_request(app):
 
 
 
-
-base_url=quote_api
+base_url = quote_api
 def get_quotes():
+   print(base_url)
+   with urllib.request.urlopen(quote_api) as url:
+      quotes_api_data = url.read()
+      quotes_api_response = json.loads(quotes_api_data)
+      quote_object = None
+      if quotes_api_response:
+        author = quotes_api_response['author']
+        quote = quotes_api_response['quote']
+        quote_object = Quotes(author=author , quote=quote)
+   return quote_object
 
-   with rq.get(base_url) as data:
-       quotes = data.json()
-
-   return quotes
 

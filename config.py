@@ -1,7 +1,7 @@
 import os
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:1234@localhost/blog'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:1234@localhost/blog'
     SECRET_KEY = '54321'
     QUOTES_API ='http://quotes.stormconsultancy.co.uk/random.json'
 
