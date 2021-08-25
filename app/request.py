@@ -1,5 +1,4 @@
-import requests as rq
-
+import request as rq
 base_url='http://quotes.stormconsultancy.co.uk/random.json'
 
 def get_quotes():

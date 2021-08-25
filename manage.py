@@ -1,9 +1,7 @@
-
 from collections import UserDict
 # from app import create_app,db
 from app.models import *
-
-from flask_script import Manager,Server,Shell
+from flask_script import Manager,Server
 
 
 
