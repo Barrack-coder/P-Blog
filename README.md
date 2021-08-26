@@ -53,6 +53,10 @@ Subscribe...	Each time there's a new blog user recieves email	app send email
 Sign out	Home page is displayed	leaves current logged in user
 Visit profile	Profile details displayed	user can edit blogs they posted or upload profile photo
 
+### Prerequisites
+
+A computer with a working and up to date web browser.
+
 ## Author
 ​
 👤 **Author**
