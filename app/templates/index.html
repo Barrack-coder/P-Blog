@@ -1,4 +1,12 @@
-{% extends 'base.html'%} {% import "bootstrap/wtf.html" as wtf %} {% block content %}
+{% extends 'base.html'%} {% import "bootstrap/wtf.html" as wtf %}
+
+{% block css %} 
+    {{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}"> 
+{% endblock %} 
+
+{% block content %}
+
 <div class="container" id="cov">
     <div class="row">
         <div class="col-md-8">
@@ -12,10 +20,10 @@
                     </button></a> {% endfor %} {% endif%}
         </div>
         <div class="col-md-4">
-            <h5 class="text-center" style="font-family: 'Rampart One', cursive; text-decoration:underline;font-size:30px;">
+            <h5 class="text-center" style="font-family: 'Shadows Into Light', cursive; text-decoration:underline;font-size:30px;">
                 Quote of the day</h5>
 
-            <p class="text-center" style="font-family: 'Dancing Script', cursive; font-size: 42px;">{{quotes.quote}}</p>
+            <p class="text-center" style="font-family: 'Rampart One', cursive; font-size: 42px;">{{quotes.quote}}</p>
             <p class="text-muted text-center"><em>By: ~{{quotes.author}}~</em></p>
 
         </div>

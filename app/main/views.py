@@ -10,7 +10,7 @@ from .forms import UpdateProfile,NewBlog,MyComment,SubscribeForm,UpdateBlog
 @main.route('/',methods=['GET','POST'])
 def index():
     blog = Blog.query.all()
-    title = "Welcome to blogsite"
+    title = "Welcome to blogupdate"
     # Getting the quotes
     quotes = get_quotes()
     print(quotes)
